@@ -1,0 +1,43 @@
+<html>
+    <head>
+
+        <title>
+            Authentication
+        </title>
+
+
+    </head>
+
+    <body>
+        
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags}} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }} 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span> 
+        </button>
+        </div>
+        {% endfor %}
+
+        <h3> Welcome to HIGH on CYBER</h3>
+
+        
+
+        {% if user.is_authenticated %}
+        <h3> Hello {{ fname }}</h3>
+        <h4> You're successfylly logged in.</h4>
+        <button type="submit"> <a href="signout"> signout</a> </button>
+        {% else %}
+        <button name="signup" type="submit"> <a href="signup">Sign Up!</a> </button><br>
+        <button name="signin" type="submit"> <a href="signin">Sign In</a></button>
+        {% endif %}
+    
+
+    </body>
+
+
+
+
+
+
+</html>
